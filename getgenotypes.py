@@ -137,18 +137,7 @@ for rr in varrr:
             y = ((2 - g) * (1 - a) + (g * a))
             y_tot = y_tot * y
         # print(y_tot)
-        if y_tot == 1 and x_tot == 1:
-            p = (0.5 ** (len(rr[2]))) * x_tot * y_tot
-            # print('if')
-        elif y_tot == 1:
-            p = (0.5 ** (len(rr[2]))) * x_tot
-            # print('elif1')
-        elif x_tot == 1:
-            p = (0.5 ** (len(rr[2]))) * y_tot
-            # print('elif')
-        else:
-            p = (0.5 ** (len(rr[2]))) * x_tot * y_tot
-            # print('else')
+        p = (1/(2**len(rr[2]))) * x_tot * y_tot
         prob_list.append(p)
     line_list.append(prob_list)
     if prob_list[0] > prob_list[1] and prob_list[0] > prob_list[2]:
